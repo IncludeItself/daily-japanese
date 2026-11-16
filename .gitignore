@@ -1,0 +1,10 @@
+﻿# OS / editor
+Thumbs.db
+desktop.ini
+.DS_Store
+*.tmp
+*.log
+
+# 临时脚本/草稿
+*.bak
+

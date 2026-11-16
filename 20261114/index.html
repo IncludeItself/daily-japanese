@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>今日の日本語 2026.11.14 ｜ 10語</title>
+<style>
+  :root{
+    --paper:#f6f1e7;
+    --paper-2:#efe8da;
+    --card:#fffdf8;
+    --ink:#26221d;
+    --ink-soft:#4a443b;
+    --muted:#8a7f6d;
+    --line:#e4dbc9;
+    --accent:#b5432e;
+    --accent-soft:#f0e2dc;
+    --gold:#b58b3b;
+    --shadow:0 1px 2px rgba(58,44,24,.06), 0 18px 34px -26px rgba(58,44,24,.45);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    padding:0 18px 64px;
+    background:
+      radial-gradient(900px 420px at 12% -8%, #fffdf7 0%, rgba(255,253,247,0) 62%),
+      radial-gradient(700px 380px at 100% 4%, #f4e7d6 0%, rgba(244,231,214,0) 58%),
+      var(--paper);
+    color:var(--ink);
+    font-family:"Hiragino Sans","Yu Gothic","Noto Sans JP","Microsoft YaHei",system-ui,sans-serif;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.7;
+  }
+  .wrap{max-width:1040px;margin:0 auto;}
+
+  /* 顶部 */
+  header.hero{
+    padding:52px 4px 26px;
+    display:flex;
+    flex-wrap:wrap;
+    align-items:flex-end;
+    justify-content:space-between;
+    gap:20px;
+    border-bottom:1px solid var(--line);
+  }
+  .hero-left .date{
+    font-size:13px;
+    letter-spacing:.22em;
+    color:var(--muted);
+    margin-bottom:14px;
+    display:flex;align-items:center;gap:10px;
+  }
+  .hero-left .date::before{content:"";width:26px;height:1px;background:var(--accent);}
+  h1{
+    margin:0;
+    font-family:"Hiragino Mincho ProN","Yu Mincho","Noto Serif JP",serif;
+    font-size:clamp(30px,5vw,44px);
+    font-weight:600;
+    letter-spacing:.06em;
+    line-height:1.3;
+  }
+  h1 .jp-small{
+    display:block;
+    font-family:"Hiragino Sans","Yu Gothic",sans-serif;
+    font-size:12px;
+    font-weight:500;
+    letter-spacing:.3em;
+    color:var(--accent);
+    margin-top:10px;
+  }
+  .hero-right{
+    display:flex;gap:26px;
+    font-size:12px;color:var(--muted);
+    letter-spacing:.08em;
+  }
+  .hero-right b{
+    display:block;
+    font-family:"Hiragino Mincho ProN","Yu Mincho",serif;
+    font-size:26px;font-weight:600;color:var(--ink);
+    letter-spacing:.02em;line-height:1.4;
+  }
+
+  /* 索引 */
+  nav.index{
+    display:flex;flex-wrap:wrap;gap:8px;
+    padding:18px 0 6px;
+  }
+  nav.index a{
+    font-family:"Hiragino Mincho ProN","Yu Mincho",serif;
+    font-size:13px;
+    color:var(--ink-soft);
+    text-decoration:none;
+    padding:5px 12px;
+    border:1px solid var(--line);
+    border-radius:999px;
+    background:rgba(255,253,248,.7);
+    transition:.18s ease;
+  }
+  nav.index a:hover{
+    border-color:var(--accent);
+    color:var(--accent);
+    background:#fff;
+  }
+
+  /* 卡片列表 */
+  .cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(430px,1fr));
+    gap:20px;
+    margin-top:22px;
+  }
+  .card{
+    background:linear-gradient(180deg,var(--card) 0%,#fdfbf4 100%);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:22px 22px 18px;
+    box-shadow:var(--shadow);
+    transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  }
+  .card:hover{transform:translateY(-2px);border-color:#d8ccb4;}
+  .card-top{
+    display:flex;align-items:center;gap:14px;
+  }
+  .num{
+    font-family:"Hiragino Mincho ProN","Yu Mincho",serif;
+    font-size:14px;color:var(--gold);
+    letter-spacing:.1em;
+    padding-top:4px;
+  }
+  .head{flex:1;min-width:0;}
+  .word-line{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+  h2.word{
+    margin:0;
+    font-family:"Hiragino Mincho ProN","Yu Mincho","Noto Serif JP",serif;
+    font-size:29px;font-weight:600;letter-spacing:.04em;line-height:1.35;
+  }
+  .accent-badge{
+    font-family:"Hiragino Mincho ProN","Yu Mincho",serif;
+    font-size:15px;color:var(--accent);
+    border:1px solid #dfb7ac;background:var(--accent-soft);
+    border-radius:999px;padding:1px 10px;line-height:1.5;
+  }
+  .sub-line{display:flex;align-items:center;gap:10px;margin-top:3px;flex-wrap:wrap;}
+  .kana{font-size:13px;color:var(--muted);letter-spacing:.14em;}
+  .pos{
+    font-size:11px;color:var(--ink-soft);
+    border:1px solid var(--line);border-radius:999px;
+    padding:1px 9px;background:var(--paper-2);
+    letter-spacing:.06em;
+  }
+  button.play{
+    width:42px;height:42px;border-radius:50%;
+    border:1px solid var(--line);
+    background:#fff;color:var(--accent);
+    display:flex;align-items:center;justify-content:center;
+    cursor:pointer;flex:none;
+    transition:.18s ease;
+    box-shadow:0 2px 6px rgba(58,44,24,.08);
+  }
+  button.play svg{width:16px;height:16px;display:block;fill:currentColor;}
+  button.play:hover{background:var(--accent);color:#fff;border-color:var(--accent);}
+  button.play.playing{
+    background:var(--accent);color:#fff;border-color:var(--accent);
+    animation:pulse 1s ease infinite;
+  }
+  @keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(181,67,46,.35);}
+    70%{box-shadow:0 0 0 10px rgba(181,67,46,0);}
+    100%{box-shadow:0 0 0 0 rgba(181,67,46,0);}
+  }
+  button.play.sm{width:30px;height:30px;}
+  button.play.sm svg{width:12px;height:12px;}
+
+  /* 用法提示 */
+  .gloss{
+    margin:14px 0 0;
+    font-size:12.5px;line-height:1.8;color:var(--ink-soft);
+    background:#f8f3e8;border:1px solid #efe6d5;border-left:3px solid var(--gold);
+    border-radius:0 10px 10px 0;
+    padding:8px 12px;
+  }
+  .gloss b{color:var(--ink);}
+
+  /* 音调图 */
+  .pitch{
+    margin:14px 0 0;
+    padding:8px 12px 4px;
+    background:#f8f3e8;
+    border:1px solid #efe6d5;
+    border-radius:12px;
+  }
+  .pitch svg{display:block;width:100%;height:62px;}
+  .pitch .cap{
+    font-size:10.5px;
+    letter-spacing:.14em;
+    color:#a2977f;
+    padding:0 2px 4px;
+  }
+
+  /* 例句 */
+  .ex{
+    border-top:1px dashed #e6ddcd;
+    margin-top:14px;
+    padding-top:12px;
+  }
+  .ex-head{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:10px;
+    margin-bottom:6px;
+  }
+  .ex-tag{
+    font-size:10.5px;
+    letter-spacing:.2em;
+    color:#a2977f;
+  }
+  .jp{
+    margin:0;
+    font-family:"Hiragino Mincho ProN","Yu Mincho","Noto Serif JP",serif;
+    font-size:16.5px;
+    line-height:1.85;
+    color:#241f1a;
+    letter-spacing:.02em;
+  }
+  .kana-read{
+    margin:4px 0 0;
+    font-size:12px;
+    line-height:1.8;
+    color:#9c917d;
+    letter-spacing:.06em;
+  }
+  .zh{
+    margin:5px 0 0;
+    font-size:13px;
+    line-height:1.75;
+    color:#6b6255;
+  }
+
+  /* 页脚 */
+  footer{
+    max-width:1040px;
+    margin:38px auto 0;
+    padding-top:18px;
+    border-top:1px solid var(--line);
+    font-size:12px;
+    color:#9c917d;
+    letter-spacing:.04em;
+    line-height:2;
+    display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;
+  }
+
+  @media (max-width:520px){
+    body{padding:0 14px 48px;}
+    header.hero{padding-top:38px;}
+    .cards{grid-template-columns:1fr;}
+    .hero-right{gap:20px;}
+    .card{padding:18px 16px 14px;}
+    .jp{font-size:15.5px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="hero-left">
+      <div class="date">2026.11.14　SATURDAY</div>
+      <h1>今日の日本語<span class="jp-small">N3 〜 N2 ・ 復習用 10 語</span></h1>
+    </div>
+    <div class="hero-right">
+      <div>単語<b>10</b>語</div>
+      <div>例文<b>20</b>文</div>
+      <div>音声<b>30</b>本</div>
+    </div>
+  </header>
+
+  <nav class="index">
+    <a href="#w1">引き受ける</a>
+    <a href="#w2">取り消す</a>
+    <a href="#w3">慣れる</a>
+    <a href="#w4">都合</a>
+    <a href="#w5">苦情</a>
+    <a href="#w6">目安</a>
+    <a href="#w7">細かい</a>
+    <a href="#w8">心強い</a>
+    <a href="#w9">いきなり</a>
+    <a href="#w10">どうやら</a>
+  </nav>
+
+  <main class="cards">
+
+    <!-- 01 引き受ける -->
+    <article class="card" id="w1">
+      <div class="card-top">
+        <span class="num">01</span>
+        <div class="head">
+          <div class="word-line">
+            <h2 class="word" lang="ja">引き受ける</h2>
+            <span class="accent-badge">③</span>
+          </div>
+          <div class="sub-line">
+            <span class="kana" lang="ja">ひきうける</span>
+            <span class="pos">動詞・一段（他）</span>
+          </div>
+        </div>
+        <button class="play" data-audio="audio/w01_word.mp3" data-text="ひきうける" aria-label="播放 引き受ける 的读音" title="播放单词">
+          <svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg>
+        </button>
+      </div>
+      <div class="gloss"><b>用法：</b>「仕事・注文・依頼を引き受ける」承担工作／订货／委托。与「受け入れる」不同，强调"接下来承担责任"。</div>
+      <div class="pitch">
+        <div class="cap">音調 ひきうける③</div>
+        <svg viewBox="0 0 300 62" preserveAspectRatio="none" aria-hidden="true">
+          <polyline points="30,44 90,18 150,18 210,44 270,44" fill="none" stroke="#b5432e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="30" cy="44" r="4.5" fill="#b5432e"/><circle cx="90" cy="18" r="4.5" fill="#b5432e"/><circle cx="150" cy="18" r="4.5" fill="#b5432e"/><circle cx="210" cy="44" r="4.5" fill="#b5432e"/><circle cx="270" cy="44" r="4.5" fill="none" stroke="#b5432e" stroke-width="2"/>
+          <text x="30" y="59" font-size="9" fill="#a2977f" text-anchor="middle">ひ</text><text x="90" y="59" font-size="9" fill="#a2977f" text-anchor="middle">き</text><text x="150" y="59" font-size="9" fill="#a2977f" text-anchor="middle">う</text><text x="210" y="59" font-size="9" fill="#a2977f" text-anchor="middle">け</text><text x="270" y="59" font-size="9" fill="#a2977f" text-anchor="middle">る</text>
+        </svg>
+      </div>
+      <div class="ex">
+        <div class="ex-head">
+          <span class="ex-tag">例文 1</span>
+          <button class="play sm" data-audio="audio/w01_e1.mp3" data-text="急な仕事だったが、上司に頼まれて引き受けることにした。" aria-label="播放例文1" title="播放例文">
+            <svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg>
+          </button>
+        </div>
+        <p class="jp" lang="ja">急な仕事だったが、上司に頼まれて引き受けることにした。</p>
+        <p class="kana-read" lang="ja">きゅうなしごとだったが、じょうしにたのまれてひきうけることにした。</p>
+        <p class="zh">虽然是临时的工作，但被上司拜托，我决定接下来。</p>
+      </div>
+      <div class="ex">
+        <div class="ex-head">
+          <span class="ex-tag">例文 2</span>
+          <button class="play sm" data-audio="audio/w01_e2.mp3" data-text="このプロジェクトは私一人では引き受けられません。" aria-label="播放例文2" title="播放例文">
+            <svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg>
+          </button>
+        </div>
+        <p class="jp" lang="ja">このプロジェクトは私一人では引き受けられません。</p>
+        <p class="kana-read" lang="ja">このプロジェクトはわたしひとりではひきうけられません。</p>
+        <p class="zh">这个项目我一个人没法承担。</p>
+      </div>
+    </article>
+
+    <!-- 02 取り消す -->
+    <article class="card" id="w2">
+      <div class="card-top">
+        <span class="num">02</span>
+        <div class="head">
+          <div class="word-line">
+            <h2 class="word" lang="ja">取り消す</h2>
+            <span class="accent-badge">③</span>
+          </div>
+          <div class="sub-line">
+            <span class="kana" lang="ja">とりけす</span>
+            <span class="pos">動詞・五段（他）</span>
+          </div>
+        </div>
+        <button class="play" data-audio="audio/w02_word.mp3" data-text="とりけす" aria-label="播放 取り消す 的读音" title="播放单词">
+          <svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg>
+        </button>
+      </div>
+      <div class="gloss"><b>用法：</b>可撤销预约、订单、发言等。名词形「取り消し」。比「キャンセルする」更书面，也用于"撤回说过的话"。</div>
+      <div class="pitch">
+        <div class="cap">音調 とりけす③</div>
+        <svg viewBox="0 0 300 62" preserveAspectRatio="none" aria-hidden="true">
+          <polyline points="30,44 110,18 190,18 270,44" fill="none" stroke="#b5432e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="30" cy="44" r="4.5" fill="#b5432e"/><circle cx="110" cy="18" r="4.5" fill="#b5432e"/><circle cx="190" cy="18" r="4.5" fill="#b5432e"/><circle cx="270" cy="44" r="4.5" fill="none" stroke="#b5432e" stroke-width="2"/>
+          <text x="30" y="59" font-size="9" fill="#a2977f" text-anchor="middle">と</text><text x="110" y="59" font-size="9" fill="#a2977f" text-anchor="middle">り</text><text x="190" y="59" font-size="9" fill="#a2977f" text-anchor="middle">け</text><text x="270" y="59" font-size="9" fill="#a2977f" text-anchor="middle">す</text>
+        </svg>
+      </div>
+      <div class="ex">
+        <div class="ex-head">
+          <span class="ex-tag">例文 1</span>
+          <button class="play sm" data-audio="audio/w02_e1.mp3" data-text="予約をキャンセルしたいので、電話で取り消してもらった。" aria-label="播放例文1" title="播放例文">
+            <svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg>
+          </button>
+        </div>
+        <p class="jp" lang="ja">予約をキャンセルしたいので、電話で取り消してもらった。</p>
+        <p class="kana-read" lang="ja">よやくをキャンセルしたいので、でんわでとりけしてもらった。</p>
+        <p class="zh">想取消预约，就打电话让对方帮我取消了。</p>
+      </div>
+      <div class="ex">
+        <div class="ex-head">
+          <span class="ex-tag">例文 2</span>
+          <button class="play sm" data-audio="audio/w02_e2.mp3" data-text="一度送ったメールは取り消せないので、よく確認してから送ってください。" aria-label="播放例文2" title="播放例文">
+            <svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg>
+          </button>
+        </div>
+        <p class="jp" lang="ja">一度送ったメールは取り消せないので、よく確認してから送ってください。</p>
+        <p class="kana-read" lang="ja">いちどおくったメールはとりけせないので、よくかくにんしてからおくってください。</p>
+        <p class="zh">发出去的邮件无法撤回，所以请确认好再发送。</p>
+      </div>
+    </article>
+
+    <!-- 03 慣れる -->
+    <article class="card" id="w3">
+      <div class="card-top">
+        <span class="num">03</span>
+        <div class="head">
+          <div class="word-line">
+            <h2 class="word" lang="ja">慣れる</h2>
+            <span class="accent-badge">②</span>
+          </div>
+          <div class="sub-line">
+            <span class="kana" lang="ja">なれる</span>
+            <span class="pos">動詞・一段（自）</span>
+          </div>
+        </div>
+        <button class="play" data-audio="audio/w03_word.mp3" data-text="なれる" aria-label="播放 慣れる 的读音" title="播放单词">
+          <svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg>
+        </button>
+      </div>
+      <div class="gloss"><b>用法：</b>「～に慣れる」习惯……。常用「慣れてきた」表示逐渐适应；名词「慣れ」，如「慣れが必要だ」。</div>
+      <div class="pitch">
+        <div class="cap">音調 なれる②</div>
+        <svg viewBox="0 0 300 62" preserveAspectRatio="none" aria-hidden="true">
+          <polyline points="30,44 150,18 270,44" fill="none" stroke="#b5432e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="30" cy="44" r="4.5" fill="#b5432e"/><circle cx="150" cy="18" r="4.5" fill="#b5432e"/><circle cx="270" cy="44" r="4.5" fill="none" stroke="#b5432e" stroke-width="2"/>
+          <text x="30" y="59" font-size="9" fill="#a2977f" text-anchor="middle">な</text><text x="150" y="59" font-size="9" fill="#a2977f" text-anchor="middle">れ</text><text x="270" y="59" font-size="9" fill="#a2977f" text-anchor="middle">る</text>
+        </svg>
+      </div>
+      <div class="ex">
+        <div class="ex-head">
+          <span class="ex-tag">例文 1</span>
+          <button class="play sm" data-audio="audio/w03_e1.mp3" data-text="新しい仕事にも少しずつ慣れてきました。" aria-label="播放例文1" title="播放例文">
+            <svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg>
+          </button>
+        </div>
+        <p class="jp" lang="ja">新しい仕事にも少しずつ慣れてきました。</p>
+        <p class="kana-read" lang="ja">あたらしいしごとにもすこしずつなれてきました。</p>
+        <p class="zh">对新工作也一点点适应起来了。</p>
+      </div>
+      <div class="ex">
+        <div class="ex-head">
+          <span class="ex-tag">例文 2</span>
+          <button class="play sm" data-audio="audio/w03_e2.mp3" data-text="日本の生活に慣れるまで、半年かかりました。" aria-label="播放例文2" title="播放例文">
+            <svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg>
+          </button>
+        </div>
+        <p class="jp" lang="ja">日本の生活に慣れるまで、半年かかりました。</p>
+        <p class="kana-read" lang="ja">にほんのせいかつになれるまで、はんとしかかりました。</p>
+        <p class="zh">适应日本的生活花了半年时间。</p>
+      </div>
+    </article>
+
+    <!-- 04 都合 -->
+    <article class="card" id="w4">
+      <div class="card-top">
+        <span class="num">04</span>
+        <div class="head">
+          <div class="word-line">
+            <h2 class="word" lang="ja">都合</h2>
+            <span class="accent-badge">⓪</span>
+          </div>
+          <div class="sub-line">
+            <span class="kana" lang="ja">つごう</span>
+            <span class="pos">名詞</span>
+          </div>
+        </div>
+        <button class="play" data-audio="audio/w04_word.mp3" data-text="つごう" aria-label="播放 都合 的读音" title="播放单词">
+          <svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg>
+        </button>
+      </div>
+      <div class="gloss"><b>用法：</b>「都合がいい／悪い」方便／不方便；「ご都合」是敬语常用形。也可表示"情况、缘由"，如「諸般の都合」。</div>
+      <div class="pitch">
+        <div class="cap">音調 つごう⓪</div>
+        <svg viewBox="0 0 300 62" preserveAspectRatio="none" aria-hidden="true">
+          <polyline points="30,44 150,18 270,18" fill="none" stroke="#b5432e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="30" cy="44" r="4.5" fill="#b5432e"/><circle cx="150" cy="18" r="4.5" fill="#b5432e"/><circle cx="270" cy="18" r="4.5" fill="none" stroke="#b5432e" stroke-width="2"/>
+          <text x="30" y="59" font-size="9" fill="#a2977f" text-anchor="middle">つ</text><text x="150" y="59" font-size="9" fill="#a2977f" text-anchor="middle">ご</text><text x="270" y="59" font-size="9" fill="#a2977f" text-anchor="middle">う</text>
+        </svg>
+      </div>
+      <div class="ex">
+        <div class="ex-head">
+          <span class="ex-tag">例文 1</span>
+          <button class="play sm" data-audio="audio/w04_e1.mp3" data-text="明日の午後は都合が悪いので、別の日にしていただけますか。" aria-label="播放例文1" title="播放例文">
+            <svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg>
+          </button>
+        </div>
+        <p class="jp" lang="ja">明日の午後は都合が悪いので、別の日にしていただけますか。</p>
+        <p class="kana-read" lang="ja">あしたのごごはつごうがわるいので、べつのひにしていただけますか。</p>
+        <p class="zh">明天下午不太方便，能改到别的日子吗？</p>
+      </div>
+      <div class="ex">
+        <div class="ex-head">
+          <span class="ex-tag">例文 2</span>
+          <button class="play sm" data-audio="audio/w04_e2.mp3" data-text="ご都合のよい日をお知らせください。" aria-label="播放例文2" title="播放例文">
+            <svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg>
+          </button>
+        </div>
+        <p class="jp" lang="ja">ご都合のよい日をお知らせください。</p>
+        <p class="kana-read" lang="ja">ごつごうのよいひをおしらせください。</p>
+        <p class="zh">请告知您方便的日期。</p>
+      </div>
+    </article>
+
+    <!-- 05 苦情 -->
+    <article class="card" id="w5">
+      <div class="card-top">
+        <span class="num">05</span>
+        <div class="head">
+          <div class="word-line">
+            <h2 class="word" lang="ja">苦情</h2>
+            <span class="accent-badge">⓪</span>
+          </div>
+          <div class="sub-line">
+            <span class="kana" lang="ja">くじょう</span>
+            <span class="pos">名詞</span>
+          </div>
+        </div>
+        <button class="play" data-audio="audio/w05_word.mp3" data-text="くじょう" aria-label="播放 苦情 的读音" title="播放单词">
+          <svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg>
+        </button>
+      </div>
+      <div class="gloss"><b>用法：</b>「苦情を言う／苦情が来る」。指对商品、服务的投诉与不满，常出现在客服、营业场景。「苦情処理」＝处理投诉。</div>
+      <div class="pitch">
+        <div class="cap">音調 くじょう⓪</div>
+        <svg viewBox="0 0 300 62" preserveAspectRatio="none" aria-hidden="true">
+          <polyline points="30,44 150,18 270,18" fill="none" stroke="#b5432e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="30" cy="44" r="4.5" fill="#b5432e"/><circle cx="150" cy="18" r="4.5" fill="#b5432e"/><circle cx="270" cy="18" r="4.5" fill="none" stroke="#b5432e" stroke-width="2"/>
+          <text x="30" y="59" font-size="9" fill="#a2977f" text-anchor="middle">く</text><text x="150" y="59" font-size="9" fill="#a2977f" text-anchor="middle">じょ</text><text x="270" y="59" font-size="9" fill="#a2977f" text-anchor="middle">う</text>
+        </svg>
+      </div>
+      <div class="ex">
+        <div class="ex-head">
+          <span class="ex-tag">例文 1</span>
+          <button class="play sm" data-audio="audio/w05_e1.mp3" data-text="商品の品質について、お客様から苦情が寄せられた。" aria-label="播放例文1" title="播放例文">
+            <svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg>
+          </button>
+        </div>
+        <p class="jp" lang="ja">商品の品質について、お客様から苦情が寄せられた。</p>
+        <p class="kana-read" lang="ja">しょうひんのひんしつについて、おきゃくさまからくじょうがよせられた。</p>
+        <p class="zh">客户就商品质量提出了投诉。</p>
+      </div>
+      <div class="ex">
+        <div class="ex-head">
+          <span class="ex-tag">例文 2</span>
+          <button class="play sm" data-audio="audio/w05_e2.mp3" data-text="苦情を言う前に、まず事情をよく聞いてあげよう。" aria-label="播放例文2" title="播放例文">
+            <svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg>
+          </button>
+        </div>
+        <p class="jp" lang="ja">苦情を言う前に、まず事情をよく聞いてあげよう。</p>
+        <p class="kana-read" lang="ja">くじょうをいうまえに、まずじじょうをよくきいてあげよう。</p>
+        <p class="zh">在抱怨之前，先好好听听对方的情况吧。</p>
+      </div>
+    </article>
+
+    <!-- 06 目安 -->
+    <article class="card" id="w6">
+      <div class="card-top">
+        <span class="num">06</span>
+        <div class="head">
+          <div class="word-line">
+            <h2 class="word" lang="ja">目安</h2>
+            <span class="accent-badge">①</span>
+          </div>
+          <div class="sub-line">
+            <span class="kana" lang="ja">めやす</span>
+            <span class="pos">名詞</span>
+          </div>
+        </div>
+        <button class="play" data-audio="audio/w06_word.mp3" data-text="めやす" aria-label="播放 目安 的读音" title="播放单词">
+          <svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg>
+        </button>
+      </div>
+      <div class="gloss"><b>用法：</b>表示大致的目标、标准或估算依据。常用「～を目安に」以……为标准，如「一時間を目安に」。</div>
+      <div class="pitch">
+        <div class="cap">音調 めやす①</div>
+        <svg viewBox="0 0 300 62" preserveAspectRatio="none" aria-hidden="true">
+          <polyline points="30,18 150,44 270,44" fill="none" stroke="#b5432e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="30" cy="18" r="4.5" fill="#b5432e"/><circle cx="150" cy="44" r="4.5" fill="#b5432e"/><circle cx="270" cy="44" r="4.5" fill="none" stroke="#b5432e" stroke-width="2"/>
+          <text x="30" y="59" font-size="9" fill="#a2977f" text-anchor="middle">め</text><text x="150" y="59" font-size="9" fill="#a2977f" text-anchor="middle">や</text><text x="270" y="59" font-size="9" fill="#a2977f" text-anchor="middle">す</text>
+        </svg>
+      </div>
+      <div class="ex">
+        <div class="ex-head">
+          <span class="ex-tag">例文 1</span>
+          <button class="play sm" data-audio="audio/w06_e1.mp3" data-text="一日の勉強時間の目安は二時間くらいです。" aria-label="播放例文1" title="播放例文">
+            <svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg>
+          </button>
+        </div>
+        <p class="jp" lang="ja">一日の勉強時間の目安は二時間くらいです。</p>
+        <p class="kana-read" lang="ja">いちにちのべんきょうじかんのめやすはにじかんくらいです。</p>
+        <p class="zh">每天学习时间的大致标准是两小时左右。</p>
+      </div>
+      <div class="ex">
+        <div class="ex-head">
+          <span class="ex-tag">例文 2</span>
+          <button class="play sm" data-audio="audio/w06_e2.mp3" data-text="費用は十万円を目安に考えてください。" aria-label="播放例文2" title="播放例文">
+            <svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg>
+          </button>
+        </div>
+        <p class="jp" lang="ja">費用は十万円を目安に考えてください。</p>
+        <p class="kana-read" lang="ja">ひようはじゅうまんえんをめやすにかんがえてください。</p>
+        <p class="zh">请以十万日元为大致标准来考虑费用。</p>
+      </div>
+    </article>
+
+    <!-- 07 細かい -->
+    <article class="card" id="w7">
+      <div class="card-top">
+        <span class="num">07</span>
+        <div class="head">
+          <div class="word-line">
+            <h2 class="word" lang="ja">細かい</h2>
+            <span class="accent-badge">③</span>
+          </div>
+          <div class="sub-line">
+            <span class="kana" lang="ja">こまかい</span>
+            <span class="pos">形容詞（い）</span>
+          </div>
+        </div>
+        <button class="play" data-audio="audio/w07_word.mp3" data-text="こまかい" aria-label="播放 細かい 的读音" title="播放单词">
+          <svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg>
+        </button>
+      </div>
+      <div class="gloss"><b>用法：</b>既指"细小、零碎"，也指"细致、具体"。「細かいお金」＝零钱；「細かいことは後で」＝细节稍后再说。</div>
+      <div class="pitch">
+        <div class="cap">音調 こまかい③</div>
+        <svg viewBox="0 0 300 62" preserveAspectRatio="none" aria-hidden="true">
+          <polyline points="30,44 110,18 190,18 270,44" fill="none" stroke="#b5432e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="30" cy="44" r="4.5" fill="#b5432e"/><circle cx="110" cy="18" r="4.5" fill="#b5432e"/><circle cx="190" cy="18" r="4.5" fill="#b5432e"/><circle cx="270" cy="44" r="4.5" fill="none" stroke="#b5432e" stroke-width="2"/>
+          <text x="30" y="59" font-size="9" fill="#a2977f" text-anchor="middle">こ</text><text x="110" y="59" font-size="9" fill="#a2977f" text-anchor="middle">ま</text><text x="190" y="59" font-size="9" fill="#a2977f" text-anchor="middle">か</text><text x="270" y="59" font-size="9" fill="#a2977f" text-anchor="middle">い</text>
+        </svg>
+      </div>
+      <div class="ex">
+        <div class="ex-head">
+          <span class="ex-tag">例文 1</span>
+          <button class="play sm" data-audio="audio/w07_e1.mp3" data-text="細かいことは後で相談しましょう。まず大まかな計画を立てよう。" aria-label="播放例文1" title="播放例文">
+            <svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg>
+          </button>
+        </div>
+        <p class="jp" lang="ja">細かいことは後で相談しましょう。まず大まかな計画を立てよう。</p>
+        <p class="kana-read" lang="ja">こまかいことはあとでそうだんしましょう。まずおおまかなけいかくをたてよう。</p>
+        <p class="zh">细节稍后再商量，先制定一个大致计划吧。</p>
+      </div>
+      <div class="ex">
+        <div class="ex-head">
+          <span class="ex-tag">例文 2</span>
+          <button class="play sm" data-audio="audio/w07_e2.mp3" data-text="細かいお金がないので、千円札で払ってもいいですか。" aria-label="播放例文2" title="播放例文">
+            <svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg>
+          </button>
+        </div>
+        <p class="jp" lang="ja">細かいお金がないので、千円札で払ってもいいですか。</p>
+        <p class="kana-read" lang="ja">こまかいおかねがないので、せんえんさつではらってもいいですか。</p>
+        <p class="zh">没有零钱，可以用一千日元纸币付吗？</p>
+      </div>
+    </article>
+
+    <!-- 08 心強い -->
+    <article class="card" id="w8">
+      <div class="card-top">
+        <span class="num">08</span>
+        <div class="head">
+          <div class="word-line">
+            <h2 class="word" lang="ja">心強い</h2>
+            <span class="accent-badge">⑤</span>
+          </div>
+          <div class="sub-line">
+            <span class="kana" lang="ja">こころづよい</span>
+            <span class="pos">形容詞（い）</span>
+          </div>
+        </div>
+        <button class="play" data-audio="audio/w08_word.mp3" data-text="こころづよい" aria-label="播放 心強い 的读音" title="播放单词">
+          <svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg>
+        </button>
+      </div>
+      <div class="gloss"><b>用法：</b>表示有依靠、心里有底，多用于感谢他人支持。反义词「心細い」（心里没底）。</div>
+      <div class="pitch">
+        <div class="cap">音調 こころづよい⑤</div>
+        <svg viewBox="0 0 300 62" preserveAspectRatio="none" aria-hidden="true">
+          <polyline points="30,44 78,18 126,18 174,18 222,18 270,18" fill="none" stroke="#b5432e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="30" cy="44" r="4.5" fill="#b5432e"/><circle cx="78" cy="18" r="4.5" fill="#b5432e"/><circle cx="126" cy="18" r="4.5" fill="#b5432e"/><circle cx="174" cy="18" r="4.5" fill="#b5432e"/><circle cx="222" cy="18" r="4.5" fill="#b5432e"/><circle cx="270" cy="18" r="4.5" fill="none" stroke="#b5432e" stroke-width="2"/>
+          <text x="30" y="59" font-size="9" fill="#a2977f" text-anchor="middle">こ</text><text x="78" y="59" font-size="9" fill="#a2977f" text-anchor="middle">こ</text><text x="126" y="59" font-size="9" fill="#a2977f" text-anchor="middle">ろ</text><text x="174" y="59" font-size="9" fill="#a2977f" text-anchor="middle">づ</text><text x="222" y="59" font-size="9" fill="#a2977f" text-anchor="middle">よ</text><text x="270" y="59" font-size="9" fill="#a2977f" text-anchor="middle">い</text>
+        </svg>
+      </div>
+      <div class="ex">
+        <div class="ex-head">
+          <span class="ex-tag">例文 1</span>
+          <button class="play sm" data-audio="audio/w08_e1.mp3" data-text="初めての一人暮らしだけど、近くに友達がいるので心強い。" aria-label="播放例文1" title="播放例文">
+            <svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg>
+          </button>
+        </div>
+        <p class="jp" lang="ja">初めての一人暮らしだけど、近くに友達がいるので心強い。</p>
+        <p class="kana-read" lang="ja">はじめてのひとりぐらしだけど、ちかくにともだちがいるのでこころづよい。</p>
+        <p class="zh">虽然是第一次一个人生活，但附近有朋友在，让人心里踏实。</p>
+      </div>
+      <div class="ex">
+        <div class="ex-head">
+          <span class="ex-tag">例文 2</span>
+          <button class="play sm" data-audio="audio/w08_e2.mp3" data-text="皆さんに応援していただいて、本当に心強く思っています。" aria-label="播放例文2" title="播放例文">
+            <svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg>
+          </button>
+        </div>
+        <p class="jp" lang="ja">皆さんに応援していただいて、本当に心強く思っています。</p>
+        <p class="kana-read" lang="ja">みなさんにおうえんしていただいて、ほんとうにこころづよくおもっています。</p>
+        <p class="zh">得到大家的支持，我真的感到很安心。</p>
+      </div>
+    </article>
+
+    <!-- 09 いきなり -->
+    <article class="card" id="w9">
+      <div class="card-top">
+        <span class="num">09</span>
+        <div class="head">
+          <div class="word-line">
+            <h2 class="word" lang="ja">いきなり</h2>
+            <span class="accent-badge">⓪</span>
+          </div>
+          <div class="sub-line">
+            <span class="kana" lang="ja">いきなり</span>
+            <span class="pos">副詞</span>
+          </div>
+        </div>
+        <button class="play" data-audio="audio/w09_word.mp3" data-text="いきなり" aria-label="播放 いきなり 的读音" title="播放单词">
+          <svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg>
+        </button>
+      </div>
+      <div class="gloss"><b>用法：</b>表示毫无预兆地突然发生，后多接意外之事。「いきなり結論から言うと」是说明场合的高频表达。</div>
+      <div class="pitch">
+        <div class="cap">音調 いきなり⓪</div>
+        <svg viewBox="0 0 300 62" preserveAspectRatio="none" aria-hidden="true">
+          <polyline points="30,44 110,18 190,18 270,18" fill="none" stroke="#b5432e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="30" cy="44" r="4.5" fill="#b5432e"/><circle cx="110" cy="18" r="4.5" fill="#b5432e"/><circle cx="190" cy="18" r="4.5" fill="#b5432e"/><circle cx="270" cy="18" r="4.5" fill="none" stroke="#b5432e" stroke-width="2"/>
+          <text x="30" y="59" font-size="9" fill="#a2977f" text-anchor="middle">い</text><text x="110" y="59" font-size="9" fill="#a2977f" text-anchor="middle">き</text><text x="190" y="59" font-size="9" fill="#a2977f" text-anchor="middle">な</text><text x="270" y="59" font-size="9" fill="#a2977f" text-anchor="middle">り</text>
+        </svg>
+      </div>
+      <div class="ex">
+        <div class="ex-head">
+          <span class="ex-tag">例文 1</span>
+          <button class="play sm" data-audio="audio/w09_e1.mp3" data-text="会議でいきなり意見を聞かれて、うまく答えられなかった。" aria-label="播放例文1" title="播放例文">
+            <svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg>
+          </button>
+        </div>
+        <p class="jp" lang="ja">会議でいきなり意見を聞かれて、うまく答えられなかった。</p>
+        <p class="kana-read" lang="ja">かいぎでいきなりいけんをきかれて、うまくこたえられなかった。</p>
+        <p class="zh">在会上突然被问到意见，没能答好。</p>
+      </div>
+      <div class="ex">
+        <div class="ex-head">
+          <span class="ex-tag">例文 2</span>
+          <button class="play sm" data-audio="audio/w09_e2.mp3" data-text="いきなり全部覚えるのは無理だから、少しずつ覚えよう。" aria-label="播放例文2" title="播放例文">
+            <svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg>
+          </button>
+        </div>
+        <p class="jp" lang="ja">いきなり全部覚えるのは無理だから、少しずつ覚えよう。</p>
+        <p class="kana-read" lang="ja">いきなりぜんぶおぼえるのはむりだから、すこしずつおぼえよう。</p>
+        <p class="zh">一下子全记住是不可能的，慢慢记吧。</p>
+      </div>
+    </article>
+
+    <!-- 10 どうやら -->
+    <article class="card" id="w10">
+      <div class="card-top">
+        <span class="num">10</span>
+        <div class="head">
+          <div class="word-line">
+            <h2 class="word" lang="ja">どうやら</h2>
+            <span class="accent-badge">①</span>
+          </div>
+          <div class="sub-line">
+            <span class="kana" lang="ja">どうやら</span>
+            <span class="pos">副詞</span>
+          </div>
+        </div>
+        <button class="play" data-audio="audio/w10_word.mp3" data-text="どうやら" aria-label="播放 どうやら 的读音" title="播放单词">
+          <svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg>
+        </button>
+      </div>
+      <div class="gloss"><b>用法：</b>根据迹象作出推测，"好像、似乎"，常与句末「らしい」「ようだ」「みたいだ」呼应。</div>
+      <div class="pitch">
+        <div class="cap">音調 どうやら①</div>
+        <svg viewBox="0 0 300 62" preserveAspectRatio="none" aria-hidden="true">
+          <polyline points="30,18 110,44 190,44 270,44" fill="none" stroke="#b5432e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="30" cy="18" r="4.5" fill="#b5432e"/><circle cx="110" cy="44" r="4.5" fill="#b5432e"/><circle cx="190" cy="44" r="4.5" fill="#b5432e"/><circle cx="270" cy="44" r="4.5" fill="none" stroke="#b5432e" stroke-width="2"/>
+          <text x="30" y="59" font-size="9" fill="#a2977f" text-anchor="middle">ど</text><text x="110" y="59" font-size="9" fill="#a2977f" text-anchor="middle">う</text><text x="190" y="59" font-size="9" fill="#a2977f" text-anchor="middle">や</text><text x="270" y="59" font-size="9" fill="#a2977f" text-anchor="middle">ら</text>
+        </svg>
+      </div>
+      <div class="ex">
+        <div class="ex-head">
+          <span class="ex-tag">例文 1</span>
+          <button class="play sm" data-audio="audio/w10_e1.mp3" data-text="どうやら明日は雨が降るらしい。" aria-label="播放例文1" title="播放例文">
+            <svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg>
+          </button>
+        </div>
+        <p class="jp" lang="ja">どうやら明日は雨が降るらしい。</p>
+        <p class="kana-read" lang="ja">どうやらあしたはあめがふるらしい。</p>
+        <p class="zh">明天好像要下雨。</p>
+      </div>
+      <div class="ex">
+        <div class="ex-head">
+          <span class="ex-tag">例文 2</span>
+          <button class="play sm" data-audio="audio/w10_e2.mp3" data-text="どうやら私が勘違いしていたようだ。" aria-label="播放例文2" title="播放例文">
+            <svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg>
+          </button>
+        </div>
+        <p class="jp" lang="ja">どうやら私が勘違いしていたようだ。</p>
+        <p class="kana-read" lang="ja">どうやらわたしがかんちがいしていたようだ。</p>
+        <p class="zh">似乎是我搞错了。</p>
+      </div>
+    </article>
+
+  </main>
+
+  <footer>
+    <div>音声：Microsoft Edge TTS（ja-JP-NanamiNeural）・音調図：NHK式表記</div>
+    <div>2026.11.14 ｜ 学び続けることが、いちばんの近道。</div>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var audios = new Map();
+  var currentAudio = null;
+  var currentBtn = null;
+
+  function clearActive(){
+    if (currentBtn) currentBtn.classList.remove('playing');
+    currentBtn = null;
+  }
+
+  function speakFallback(text, btn){
+    if (!text || !('speechSynthesis' in window)) return;
+    try {
+      speechSynthesis.cancel();
+      var u = new SpeechSynthesisUtterance(text);
+      u.lang = 'ja-JP';
+      u.rate = 0.9;
+      u.onend = function(){ btn.classList.remove('playing'); };
+      u.onerror = function(){ btn.classList.remove('playing'); };
+      btn.classList.add('playing');
+      speechSynthesis.speak(u);
+    } catch(e){ /* ignore */ }
+  }
+
+  document.querySelectorAll('.play').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var src = btn.dataset.audio;
+      var text = btn.dataset.text || '';
+
+      var item = audios.get(src);
+      if (!item){
+        var a = new Audio(src);
+        a.preload = 'none';
+        item = a;
+        audios.set(src, a);
+        a.addEventListener('ended', function(){
+          if (currentAudio === a) clearActive();
+        });
+        a.addEventListener('error', function(){
+          clearActive();
+          speakFallback(text, btn);
+        });
+      }
+
+      if (currentAudio === item && !item.paused){
+        item.pause();
+        item.currentTime = 0;
+        clearActive();
+        return;
+      }
+      if (currentAudio && currentAudio !== item){
+        currentAudio.pause();
+        currentAudio.currentTime = 0;
+      }
+      clearActive();
+      currentAudio = item;
+      currentBtn = btn;
+      btn.classList.add('playing');
+      item.currentTime = 0;
+      item.play().catch(function(){
+        clearActive();
+        speakFallback(text, btn);
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>
