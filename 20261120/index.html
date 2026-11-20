@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日日语 · 2026年11月20日 · N3~N2 复习巩固</title>
+<style>
+  :root {
+    --indigo: #3a4a9f;
+    --indigo-dark: #2b3878;
+    --indigo-light: #eef1fb;
+    --sakura: #e8a2b0;
+    --ink: #2d3142;
+    --muted: #7a7f92;
+    --bg: #f5f6fa;
+    --card: #ffffff;
+    --border: #e3e6ef;
+    --green: #3d8f6a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic UI", "Yu Gothic", "Meiryo", "Microsoft YaHei", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.65;
+    padding-bottom: 60px;
+  }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 16px; }
+
+  header {
+    background: linear-gradient(135deg, var(--indigo-dark) 0%, var(--indigo) 70%, #5566c2 100%);
+    color: #fff;
+    padding: 42px 0 34px;
+    border-radius: 0 0 26px 26px;
+    box-shadow: 0 6px 24px rgba(43, 56, 120, .25);
+  }
+  header .date-line { font-size: 14px; opacity: .85; letter-spacing: 2px; }
+  header h1 { font-size: 30px; font-weight: 700; margin: 8px 0 6px; }
+  header .sub { font-size: 15px; opacity: .92; }
+  .badges { margin-top: 16px; display: flex; gap: 8px; flex-wrap: wrap; }
+  .badge {
+    background: rgba(255,255,255,.16);
+    border: 1px solid rgba(255,255,255,.35);
+    border-radius: 999px;
+    padding: 4px 14px;
+    font-size: 13px;
+  }
+
+  .chips {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    margin: 26px 0 6px;
+  }
+  .chips a {
+    text-decoration: none;
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--indigo);
+    border-radius: 999px;
+    padding: 6px 14px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all .15s;
+  }
+  .chips a:hover { background: var(--indigo-light); border-color: var(--indigo); transform: translateY(-1px); }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 22px 24px;
+    margin-top: 18px;
+    box-shadow: 0 2px 10px rgba(45, 49, 66, .05);
+  }
+  .card-head {
+    display: flex; align-items: center; gap: 16px;
+    padding-bottom: 14px; border-bottom: 1px dashed var(--border);
+    flex-wrap: wrap;
+  }
+  .num {
+    flex: 0 0 auto;
+    width: 42px; height: 42px; border-radius: 12px;
+    background: var(--indigo-light); color: var(--indigo);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 17px;
+  }
+  .word-block { flex: 1 1 auto; min-width: 200px; }
+  .word { font-size: 34px; font-weight: 700; color: var(--ink); line-height: 1.25; }
+  .word rt { font-size: 15px; color: var(--indigo); font-weight: 500; }
+  .meta { margin-top: 6px; display: flex; gap: 8px; flex-wrap: wrap; }
+  .meta span {
+    font-size: 13px; border-radius: 6px; padding: 2px 10px;
+    background: var(--indigo-light); color: var(--indigo-dark); font-weight: 600;
+  }
+  .meta span.accent { background: #fdf0f3; color: #b04a63; }
+
+  .btn-play {
+    flex: 0 0 auto;
+    display: inline-flex; align-items: center; gap: 7px;
+    background: var(--indigo); color: #fff;
+    border: none; border-radius: 999px;
+    padding: 9px 18px; font-size: 14px; font-weight: 600;
+    cursor: pointer; transition: all .15s;
+    font-family: inherit;
+  }
+  .btn-play:hover { background: var(--indigo-dark); box-shadow: 0 3px 10px rgba(58, 74, 159, .35); }
+  .btn-play:active { transform: scale(.96); }
+  .btn-play.playing { background: var(--green); }
+  .btn-play svg { width: 15px; height: 15px; fill: currentColor; }
+
+  .meaning { margin-top: 14px; font-size: 16px; font-weight: 600; color: var(--indigo-dark); }
+
+  .examples { margin-top: 14px; display: grid; gap: 12px; }
+  .example {
+    background: #f8f9fc;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 12px 14px;
+  }
+  .ex-head { display: flex; align-items: flex-start; gap: 10px; }
+  .btn-mini {
+    flex: 0 0 auto;
+    width: 30px; height: 30px; border-radius: 50%;
+    border: none; background: var(--indigo); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; transition: all .15s; margin-top: 2px;
+  }
+  .btn-mini:hover { background: var(--indigo-dark); }
+  .btn-mini.playing { background: var(--green); }
+  .btn-mini svg { width: 12px; height: 12px; fill: currentColor; }
+  .ex-jp { font-size: 17px; font-weight: 600; }
+  .ex-kana { font-size: 14px; color: var(--indigo); margin-top: 6px; margin-left: 40px; }
+  .ex-cn { font-size: 14px; color: var(--muted); margin-top: 3px; margin-left: 40px; }
+
+  footer {
+    margin-top: 34px; text-align: center;
+    color: var(--muted); font-size: 13px;
+  }
+  footer .tip { background: var(--indigo-light); border-radius: 12px; padding: 12px 18px; color: var(--indigo-dark); display: inline-block; text-align: left; }
+  @media (max-width: 560px) {
+    .word { font-size: 28px; }
+    .ex-kana, .ex-cn { margin-left: 0; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="date-line">毎日日本語 ／ DAILY JAPANESE</div>
+    <h1>2026年11月20日 · 单词复习</h1>
+    <div class="sub">中级 N3～N2 水平 · 10 个实用单词 · 主题：情绪心态 × 生活理财 × 人际互动</div>
+    <div class="badges">
+      <span class="badge">动词 × 4</span>
+      <span class="badge">名词 × 3</span>
+      <span class="badge">形容动词 × 1</span>
+      <span class="badge">形容词 × 1</span>
+      <span class="badge">副词 × 1</span>
+      <span class="badge">配音：已生成 mp3，点击即播</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <nav class="chips">
+    <a href="#w01">① 焦る</a>
+    <a href="#w02">② 調整</a>
+    <a href="#w03">③ 大袈裟</a>
+    <a href="#w04">④ さすが</a>
+    <a href="#w05">⑤ 滑る</a>
+    <a href="#w06">⑥ 節約</a>
+    <a href="#w07">⑦ 硬い</a>
+    <a href="#w08">⑧ 見通し</a>
+    <a href="#w09">⑨ 励ます</a>
+    <a href="#w10">⑩ 稼ぐ</a>
+  </nav>
+
+  <!-- 01 焦る -->
+  <section class="card" id="w01">
+    <div class="card-head">
+      <div class="num">01</div>
+      <div class="word-block">
+        <div class="word"><ruby>焦る<rt>あせる</rt></ruby></div>
+        <div class="meta"><span class="accent">音调 ②</span><span>动词・五段</span></div>
+      </div>
+      <button class="btn-play" data-src="w01.mp3" data-text="焦る"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4z"/></svg>朗读</button>
+    </div>
+    <div class="meaning">焦躁；着急；沉不住气（急于求成而慌乱）</div>
+    <div class="examples">
+      <div class="example">
+        <div class="ex-head">
+          <button class="btn-mini" data-src="w01_e1.mp3" data-text="失敗しても焦らず、一つずつ確認していこう。" title="播放例句"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+          <div class="ex-jp">失敗しても焦らず、一つずつ確認していこう。</div>
+        </div>
+        <div class="ex-kana">しっぱいしても あせらず、ひとつずつ かくにんしていこう。</div>
+        <div class="ex-cn">即使失败了也不要着急，一件一件地确认下去吧。</div>
+      </div>
+      <div class="example">
+        <div class="ex-head">
+          <button class="btn-mini" data-src="w01_e2.mp3" data-text="締め切りが近づくと、つい焦ってしまう。" title="播放例句"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+          <div class="ex-jp">締め切りが近づくと、つい焦ってしまう。</div>
+        </div>
+        <div class="ex-kana">しめきりが ちかづくと、つい あせってしまう。</div>
+        <div class="ex-cn">截止日期一临近，就不由得慌张起来。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 調整 -->
+  <section class="card" id="w02">
+    <div class="card-head">
+      <div class="num">02</div>
+      <div class="word-block">
+        <div class="word"><ruby>調整<rt>ちょうせい</rt></ruby></div>
+        <div class="meta"><span class="accent">音调 ⓪</span><span>名词・サ变</span></div>
+      </div>
+      <button class="btn-play" data-src="w02.mp3" data-text="調整"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4z"/></svg>朗读</button>
+    </div>
+    <div class="meaning">调整；调节（时间、日程、状态、数量等）</div>
+    <div class="examples">
+      <div class="example">
+        <div class="ex-head">
+          <button class="btn-mini" data-src="w02_e1.mp3" data-text="会議の時間を調整してもらえますか。" title="播放例句"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+          <div class="ex-jp">会議の時間を調整してもらえますか。</div>
+        </div>
+        <div class="ex-kana">かいぎの じかんを ちょうせいしてもらえますか。</div>
+        <div class="ex-cn">能帮我调整一下会议时间吗？</div>
+      </div>
+      <div class="example">
+        <div class="ex-head">
+          <button class="btn-mini" data-src="w02_e2.mp3" data-text="体調を崩したので、仕事量を調整する必要がある。" title="播放例句"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+          <div class="ex-jp">体調を崩したので、仕事量を調整する必要がある。</div>
+        </div>
+        <div class="ex-kana">たいちょうを くずしたので、しごとりょうを ちょうせいする ひつようがある。</div>
+        <div class="ex-cn">身体状况变差了，有必要调整一下工作量。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 大袈裟 -->
+  <section class="card" id="w03">
+    <div class="card-head">
+      <div class="num">03</div>
+      <div class="word-block">
+        <div class="word"><ruby>大袈裟<rt>おおげさ</rt></ruby></div>
+        <div class="meta"><span class="accent">音调 ⓪</span><span>形容动词（な）</span></div>
+      </div>
+      <button class="btn-play" data-src="w03.mp3" data-text="大袈裟"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4z"/></svg>朗读</button>
+    </div>
+    <div class="meaning">夸张；夸大；小题大做</div>
+    <div class="examples">
+      <div class="example">
+        <div class="ex-head">
+          <button class="btn-mini" data-src="w03_e1.mp3" data-text="彼は小さなミスを大袈裟に言う癖がある。" title="播放例句"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+          <div class="ex-jp">彼は小さなミスを大袈裟に言う癖がある。</div>
+        </div>
+        <div class="ex-kana">かれは ちいさな ミスを おおげさに いうの くせがある。</div>
+        <div class="ex-cn">他有个毛病，喜欢把小失误说得很夸张。</div>
+      </div>
+      <div class="example">
+        <div class="ex-head">
+          <button class="btn-mini" data-src="w03_e2.mp3" data-text="大袈裟に驚かないで、まずは冷静に状況を見て。" title="播放例句"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+          <div class="ex-jp">大袈裟に驚かないで、まずは冷静に状況を見て。</div>
+        </div>
+        <div class="ex-kana">おおげさに おどろかないで、まずは れいせいに じょうきょうを みて。</div>
+        <div class="ex-cn">别大惊小怪的，先冷静看看情况。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 さすが -->
+  <section class="card" id="w04">
+    <div class="card-head">
+      <div class="num">04</div>
+      <div class="word-block">
+        <div class="word">さすが</div>
+        <div class="meta"><span class="accent">音调 ⓪</span><span>副词</span></div>
+      </div>
+      <button class="btn-play" data-src="w04.mp3" data-text="さすが"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4z"/></svg>朗读</button>
+    </div>
+    <div class="meaning">不愧是；到底是；毕竟连……也（さすがに）</div>
+    <div class="examples">
+      <div class="example">
+        <div class="ex-head">
+          <button class="btn-mini" data-src="w04_e1.mp3" data-text="さすがは先輩だ。難しい問題もすぐに解いた。" title="播放例句"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+          <div class="ex-jp">さすがは先輩だ。難しい問題もすぐに解いた。</div>
+        </div>
+        <div class="ex-kana">さすがは せんぱいだ。むずかしい もんだいも すぐに といた。</div>
+        <div class="ex-cn">不愧是前辈，连难题也马上解出来了。</div>
+      </div>
+      <div class="example">
+        <div class="ex-head">
+          <button class="btn-mini" data-src="w04_e2.mp3" data-text="さすがに今日は疲れたので、早めに帰ろう。" title="播放例句"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+          <div class="ex-jp">さすがに今日は疲れたので、早めに帰ろう。</div>
+        </div>
+        <div class="ex-kana">さすがに きょうは つかれたので、はやめに かえろう。</div>
+        <div class="ex-cn">今天毕竟太累了，早点回去吧。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 滑る -->
+  <section class="card" id="w05">
+    <div class="card-head">
+      <div class="num">05</div>
+      <div class="word-block">
+        <div class="word"><ruby>滑る<rt>すべる</rt></ruby></div>
+        <div class="meta"><span class="accent">音调 ②</span><span>动词・五段</span></div>
+      </div>
+      <button class="btn-play" data-src="w05.mp3" data-text="滑る"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4z"/></svg>朗读</button>
+    </div>
+    <div class="meaning">滑；打滑；滑行；（成绩等）下滑</div>
+    <div class="examples">
+      <div class="example">
+        <div class="ex-head">
+          <button class="btn-mini" data-src="w05_e1.mp3" data-text="雨の日は道が滑りやすいので、足元に気をつけて。" title="播放例句"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+          <div class="ex-jp">雨の日は道が滑りやすいので、足元に気をつけて。</div>
+        </div>
+        <div class="ex-kana">あめのひは みちが すべりやすいので、あしもとに きをつけて。</div>
+        <div class="ex-cn">下雨天路容易打滑，注意脚下。</div>
+      </div>
+      <div class="example">
+        <div class="ex-head">
+          <button class="btn-mini" data-src="w05_e2.mp3" data-text="氷の上で足を滑らせて、転んでしまった。" title="播放例句"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+          <div class="ex-jp">氷の上で足を滑らせて、転んでしまった。</div>
+        </div>
+        <div class="ex-kana">こおりの うえで あしを すべらせて、ころんでしまった。</div>
+        <div class="ex-cn">在冰面上脚下一滑，摔倒了。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 節約 -->
+  <section class="card" id="w06">
+    <div class="card-head">
+      <div class="num">06</div>
+      <div class="word-block">
+        <div class="word"><ruby>節約<rt>せつやく</rt></ruby></div>
+        <div class="meta"><span class="accent">音调 ⓪</span><span>名词・サ变</span></div>
+      </div>
+      <button class="btn-play" data-src="w06.mp3" data-text="節約"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4z"/></svg>朗读</button>
+    </div>
+    <div class="meaning">节约；节省（金钱、时间、资源等）</div>
+    <div class="examples">
+      <div class="example">
+        <div class="ex-head">
+          <button class="btn-mini" data-src="w06_e1.mp3" data-text="電気代を節約するために、出るときは必ず消すようにしている。" title="播放例句"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+          <div class="ex-jp">電気代を節約するために、出るときは必ず消すようにしている。</div>
+        </div>
+        <div class="ex-kana">でんきだいを せつやくするために、でるときは かならず けすようにしている。</div>
+        <div class="ex-cn">为了节省电费，出门时一定记得关灯。</div>
+      </div>
+      <div class="example">
+        <div class="ex-head">
+          <button class="btn-mini" data-src="w06_e2.mp3" data-text="無駄遣いをやめて、もう少し節約しよう。" title="播放例句"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+          <div class="ex-jp">無駄遣いをやめて、もう少し節約しよう。</div>
+        </div>
+        <div class="ex-kana">むだづかいを やめて、もうすこし せつやくしよう。</div>
+        <div class="ex-cn">别乱花钱了，再稍微节约一点吧。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 硬い -->
+  <section class="card" id="w07">
+    <div class="card-head">
+      <div class="num">07</div>
+      <div class="word-block">
+        <div class="word"><ruby>硬い<rt>かたい</rt></ruby></div>
+        <div class="meta"><span class="accent">音调 ②</span><span>形容词（い）</span></div>
+      </div>
+      <button class="btn-play" data-src="w07.mp3" data-text="硬い"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4z"/></svg>朗读</button>
+    </div>
+    <div class="meaning">坚硬的；僵硬的；（态度、语气）生硬的</div>
+    <div class="examples">
+      <div class="example">
+        <div class="ex-head">
+          <button class="btn-mini" data-src="w07_e1.mp3" data-text="このパンは焼きすぎて、とても硬くなってしまった。" title="播放例句"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+          <div class="ex-jp">このパンは焼きすぎて、とても硬くなってしまった。</div>
+        </div>
+        <div class="ex-kana">このパンは やきすぎて、とても かたくなってしまった。</div>
+        <div class="ex-cn">这个面包烤过头了，变得特别硬。</div>
+      </div>
+      <div class="example">
+        <div class="ex-head">
+          <button class="btn-mini" data-src="w07_e2.mp3" data-text="緊張すると、肩が硬くなってしまう。" title="播放例句"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+          <div class="ex-jp">緊張すると、肩が硬くなってしまう。</div>
+        </div>
+        <div class="ex-kana">きんちょうすると、かたが かたくなってしまう。</div>
+        <div class="ex-cn">一紧张，肩膀就变得僵硬。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 見通し -->
+  <section class="card" id="w08">
+    <div class="card-head">
+      <div class="num">08</div>
+      <div class="word-block">
+        <div class="word"><ruby>見通し<rt>みとおし</rt></ruby></div>
+        <div class="meta"><span class="accent">音调 ⓪</span><span>名词</span></div>
+      </div>
+      <button class="btn-play" data-src="w08.mp3" data-text="見通し"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4z"/></svg>朗读</button>
+    </div>
+    <div class="meaning">预测；展望；预料；眺望</div>
+    <div class="examples">
+      <div class="example">
+        <div class="ex-head">
+          <button class="btn-mini" data-src="w08_e1.mp3" data-text="来年の売り上げの見通しは明るい。" title="播放例句"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+          <div class="ex-jp">来年の売り上げの見通しは明るい。</div>
+        </div>
+        <div class="ex-kana">らいねんの うりあげの みとおしは あかるい。</div>
+        <div class="ex-cn">明年销售额的前景乐观。</div>
+      </div>
+      <div class="example">
+        <div class="ex-head">
+          <button class="btn-mini" data-src="w08_e2.mp3" data-text="工事がいつ終わるか、まだ見通しが立たない。" title="播放例句"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+          <div class="ex-jp">工事がいつ終わるか、まだ見通しが立たない。</div>
+        </div>
+        <div class="ex-kana">こうじが いつ おわるか、まだ みとおしが たたない。</div>
+        <div class="ex-cn">工程什么时候能结束，还无法预料。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 09 励ます -->
+  <section class="card" id="w09">
+    <div class="card-head">
+      <div class="num">09</div>
+      <div class="word-block">
+        <div class="word"><ruby>励ます<rt>はげます</rt></ruby></div>
+        <div class="meta"><span class="accent">音调 ③</span><span>动词・五段</span></div>
+      </div>
+      <button class="btn-play" data-src="w09.mp3" data-text="励ます"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4z"/></svg>朗读</button>
+    </div>
+    <div class="meaning">鼓励；激励；勉励</div>
+    <div class="examples">
+      <div class="example">
+        <div class="ex-head">
+          <button class="btn-mini" data-src="w09_e1.mp3" data-text="先生は落ち込んでいる学生を優しく励ました。" title="播放例句"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+          <div class="ex-jp">先生は落ち込んでいる学生を優しく励ました。</div>
+        </div>
+        <div class="ex-kana">せんせいは おちこんでいる がくせいを やさしく はげました。</div>
+        <div class="ex-cn">老师温柔地鼓励了情绪低落的学生。</div>
+      </div>
+      <div class="example">
+        <div class="ex-head">
+          <button class="btn-mini" data-src="w09_e2.mp3" data-text="試合に負けた友達を励ますメッセージを送った。" title="播放例句"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+          <div class="ex-jp">試合に負けた友達を励ますメッセージを送った。</div>
+        </div>
+        <div class="ex-kana">しあいに まけた ともだちを はげます メッセージを おくった。</div>
+        <div class="ex-cn">给比赛失利的朋友发了鼓励的信息。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 稼ぐ -->
+  <section class="card" id="w10">
+    <div class="card-head">
+      <div class="num">10</div>
+      <div class="word-block">
+        <div class="word"><ruby>稼ぐ<rt>かせぐ</rt></ruby></div>
+        <div class="meta"><span class="accent">音调 ②</span><span>动词・五段</span></div>
+      </div>
+      <button class="btn-play" data-src="w10.mp3" data-text="稼ぐ"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4z"/></svg>朗读</button>
+    </div>
+    <div class="meaning">挣（钱）；赚；（比赛、考试中）争取（分数、优势）</div>
+    <div class="examples">
+      <div class="example">
+        <div class="ex-head">
+          <button class="btn-mini" data-src="w10_e1.mp3" data-text="学生の頃は、アルバイトで生活費を稼いでいた。" title="播放例句"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+          <div class="ex-jp">学生の頃は、アルバイトで生活費を稼いでいた。</div>
+        </div>
+        <div class="ex-kana">がくせいの ころは、アルバイトで せいかつひを かせいでいた。</div>
+        <div class="ex-cn">学生时代靠打工挣生活费。</div>
+      </div>
+      <div class="example">
+        <div class="ex-head">
+          <button class="btn-mini" data-src="w10_e2.mp3" data-text="前半で点差を稼いだのが、勝ちにつながった。" title="播放例句"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+          <div class="ex-jp">前半で点差を稼いだのが、勝ちにつながった。</div>
+        </div>
+        <div class="ex-kana">ぜんはんで てんさを かせいだのが、かちに つながった。</div>
+        <div class="ex-cn">上半场争取到的分差，带来了最终的胜利。</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="tip">
+      学习小贴士：先点击「朗读」听单词读音并跟读 2 遍，再听例句、遮住中文自测翻译。
+      「焦る・さすが」偏情绪心态与评价，「調整・見通し」偏计划与职场沟通，「節約・稼ぐ」偏金钱与生活规划，「滑る・硬い」偏生活描述与身体感受，「大袈裟・励ます」偏人际表达。注意「さすがは～だ」表赞叹，「さすがに～」表妥协让步，用法不同。
+    </div>
+    <p style="margin-top:12px">每日日语 · 20261120 · 音频由 edge-tts（ja-JP-NanamiNeural）生成 · 若音频无法播放，将自动切换浏览器语音朗读</p>
+  </footer>
+
+</div>
+
+<script>
+  let currentAudio = null;
+  let currentBtn = null;
+
+  function resetBtn(btn) {
+    if (!btn) return;
+    btn.classList.remove('playing');
+  }
+
+  function speakFallback(text, btn) {
+    if (!window.speechSynthesis) return;
+    window.speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = 'ja-JP';
+    u.rate = 0.95;
+    if (btn) {
+      u.onend = function () { resetBtn(btn); };
+      u.onerror = function () { resetBtn(btn); };
+    }
+    window.speechSynthesis.speak(u);
+  }
+
+  function play(src, text, btn) {
+    if (currentBtn && currentBtn !== btn) resetBtn(currentBtn);
+    if (window.speechSynthesis) window.speechSynthesis.cancel();
+    if (currentAudio) { currentAudio.pause(); currentAudio = null; }
+
+    currentBtn = btn;
+    if (btn) btn.classList.add('playing');
+
+    const a = new Audio(src);
+    currentAudio = a;
+    a.onended = function () { resetBtn(btn); };
+    a.onerror = function () {
+      speakFallback(text, btn);
+    };
+    a.play().catch(function () { speakFallback(text, btn); });
+  }
+
+  document.addEventListener('click', function (e) {
+    const btn = e.target.closest('button[data-src]');
+    if (!btn) return;
+    play(btn.getAttribute('data-src'), btn.getAttribute('data-text'), btn);
+  });
+</script>
+
+</body>
+</html>
