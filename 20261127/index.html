@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日日语 · 2026年11月27日 · N3~N2 复习巩固</title>
+<style>
+  :root {
+    --indigo: #3a4a9f;
+    --indigo-dark: #2b3878;
+    --indigo-light: #eef1fb;
+    --sakura: #e8a2b0;
+    --ink: #2d3142;
+    --muted: #7a7f92;
+    --bg: #f5f6fa;
+    --card: #ffffff;
+    --border: #e3e6ef;
+    --green: #3d8f6a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic UI", "Yu Gothic", "Meiryo", "Microsoft YaHei", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.65;
+    padding-bottom: 60px;
+  }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 16px; }
+
+  header {
+    background: linear-gradient(135deg, var(--indigo-dark) 0%, var(--indigo) 70%, #5566c2 100%);
+    color: #fff;
+    padding: 42px 0 34px;
+    border-radius: 0 0 26px 26px;
+    box-shadow: 0 6px 24px rgba(43, 56, 120, .25);
+  }
+  header .date-line { font-size: 14px; opacity: .85; letter-spacing: 2px; }
+  header h1 { font-size: 30px; font-weight: 700; margin: 8px 0 6px; }
+  header .sub { font-size: 15px; opacity: .92; }
+  .badges { margin-top: 16px; display: flex; gap: 8px; flex-wrap: wrap; }
+  .badge {
+    background: rgba(255,255,255,.16);
+    border: 1px solid rgba(255,255,255,.35);
+    border-radius: 999px;
+    padding: 4px 14px;
+    font-size: 13px;
+  }
+
+  .chips {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    margin: 26px 0 6px;
+  }
+  .chips a {
+    text-decoration: none;
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--indigo);
+    border-radius: 999px;
+    padding: 6px 14px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all .15s;
+  }
+  .chips a:hover { background: var(--indigo-light); border-color: var(--indigo); transform: translateY(-1px); }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 22px 24px;
+    margin-top: 18px;
+    box-shadow: 0 2px 10px rgba(45, 49, 66, .05);
+  }
+  .card-head {
+    display: flex; align-items: center; gap: 16px;
+    padding-bottom: 14px; border-bottom: 1px dashed var(--border);
+    flex-wrap: wrap;
+  }
+  .num {
+    flex: 0 0 auto;
+    width: 42px; height: 42px; border-radius: 12px;
+    background: var(--indigo-light); color: var(--indigo);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 17px;
+  }
+  .word-block { flex: 1 1 auto; min-width: 200px; }
+  .word { font-size: 34px; font-weight: 700; color: var(--ink); line-height: 1.25; }
+  .word rt { font-size: 15px; color: var(--indigo); font-weight: 500; }
+  .meta { margin-top: 6px; display: flex; gap: 8px; flex-wrap: wrap; }
+  .meta span {
+    font-size: 13px; border-radius: 6px; padding: 2px 10px;
+    background: var(--indigo-light); color: var(--indigo-dark); font-weight: 600;
+  }
+  .meta span.accent { background: #fdf0f3; color: #b04a63; }
+
+  .btn-play {
+    flex: 0 0 auto;
+    display: inline-flex; align-items: center; gap: 7px;
+    background: var(--indigo); color: #fff;
+    border: none; border-radius: 999px;
+    padding: 9px 18px; font-size: 14px; font-weight: 600;
+    cursor: pointer; transition: all .15s;
+    font-family: inherit;
+  }
+  .btn-play:hover { background: var(--indigo-dark); box-shadow: 0 3px 10px rgba(58, 74, 159, .35); }
+  .btn-play:active { transform: scale(.96); }
+  .btn-play.playing { background: var(--green); }
+  .btn-play svg { width: 15px; height: 15px; fill: currentColor; }
+
+  .meaning { margin-top: 14px; font-size: 16px; font-weight: 600; color: var(--indigo-dark); }
+
+  .examples { margin-top: 14px; display: grid; gap: 12px; }
+  .example {
+    background: #f8f9fc;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 12px 14px;
+  }
+  .ex-head { display: flex; align-items: flex-start; gap: 10px; }
+  .btn-mini {
+    flex: 0 0 auto;
+    width: 30px; height: 30px; border-radius: 50%;
+    border: none; background: var(--indigo); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; transition: all .15s; margin-top: 2px;
+  }
+  .btn-mini:hover { background: var(--indigo-dark); }
+  .btn-mini.playing { background: var(--green); }
+  .btn-mini svg { width: 12px; height: 12px; fill: currentColor; }
+  .ex-jp { font-size: 17px; font-weight: 600; }
+  .ex-kana { font-size: 14px; color: var(--indigo); margin-top: 6px; margin-left: 40px; }
+  .ex-cn { font-size: 14px; color: var(--muted); margin-top: 3px; margin-left: 40px; }
+
+  footer {
+    margin-top: 34px; text-align: center;
+    color: var(--muted); font-size: 13px;
+  }
+  footer .tip { background: var(--indigo-light); border-radius: 12px; padding: 12px 18px; color: var(--indigo-dark); display: inline-block; text-align: left; }
+  @media (max-width: 560px) {
+    .word { font-size: 28px; }
+    .ex-kana, .ex-cn { margin-left: 0; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="date-line">毎日日本語 ／ DAILY JAPANESE</div>
+    <h1>2026年11月27日 · 单词复习</h1>
+    <div class="sub">中级 N3～N2 水平 · 10 个实用单词 · 主题：出差工作 × 家务分担 × 日常察觉 × 人际邀请 × 情绪表达</div>
+    <div class="badges">
+      <span class="badge">名词 × 2</span>
+      <span class="badge">动词 × 3</span>
+      <span class="badge">形容动词 × 2</span>
+      <span class="badge">形容词 × 1</span>
+      <span class="badge">副词 × 2</span>
+      <span class="badge">配音：已生成 mp3，点击即播</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <nav class="chips">
+    <a href="#w01">① 出張</a>
+    <a href="#w02">② 家事</a>
+    <a href="#w03">③ 気付く</a>
+    <a href="#w04">④ 済ませる</a>
+    <a href="#w05">⑤ 招く</a>
+    <a href="#w06">⑥ 苦手</a>
+    <a href="#w07">⑦ 手軽</a>
+    <a href="#w08">⑧ 恥ずかしい</a>
+    <a href="#w09">⑨ 早速</a>
+    <a href="#w10">⑩ たちまち</a>
+  </nav>
+
+  <!-- 01 出張 -->
+  <section class="card" id="w01">
+    <div class="card-head">
+      <div class="num">01</div>
+      <div class="word-block">
+        <div class="word"><ruby>出張<rt>しゅっちょう</rt></ruby></div>
+        <div class="meta"><span class="accent">音调 ⓪</span><span>名词・サ变</span></div>
+      </div>
+      <button class="btn-play" data-src="w01.mp3" data-text="出張"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4z"/></svg>朗读</button>
+    </div>
+    <div class="meaning">出差（因公务到外地办事）；跑外勤</div>
+    <div class="examples">
+      <div class="example">
+        <div class="ex-head">
+          <button class="btn-mini" data-src="w01_e1.mp3" data-text="来週、大阪へ出張することになりました。" title="播放例句"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+          <div class="ex-jp">来週、大阪へ出張することになりました。</div>
+        </div>
+        <div class="ex-kana">らいしゅう、おおさかへ しゅっちょうする ことに なりました。</div>
+        <div class="ex-cn">下周决定去大阪出差。</div>
+      </div>
+      <div class="example">
+        <div class="ex-head">
+          <button class="btn-mini" data-src="w01_e2.mp3" data-text="出張の準備で、今夜は遅くまで資料を作っています。" title="播放例句"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+          <div class="ex-jp">出張の準備で、今夜は遅くまで資料を作っています。</div>
+        </div>
+        <div class="ex-kana">しゅっちょうの じゅんびで、こんやは おそくまで しりょうを つくっています。</div>
+        <div class="ex-cn">为了准备出差，今晚一直在赶做资料到很晚。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 家事 -->
+  <section class="card" id="w02">
+    <div class="card-head">
+      <div class="num">02</div>
+      <div class="word-block">
+        <div class="word"><ruby>家事<rt>かじ</rt></ruby></div>
+        <div class="meta"><span class="accent">音调 ①</span><span>名词</span></div>
+      </div>
+      <button class="btn-play" data-src="w02.mp3" data-text="家事"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4z"/></svg>朗读</button>
+    </div>
+    <div class="meaning">家务（做饭、洗衣、打扫等日常家务事）</div>
+    <div class="examples">
+      <div class="example">
+        <div class="ex-head">
+          <button class="btn-mini" data-src="w02_e1.mp3" data-text="平日は仕事が忙しくて、家事がなかなか進まない。" title="播放例句"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+          <div class="ex-jp">平日は仕事が忙しくて、家事がなかなか進まない。</div>
+        </div>
+        <div class="ex-kana">へいじつは しごとが いそがしくて、かじが なかなか すすまない。</div>
+        <div class="ex-cn">工作日工作太忙，家务总是推进不下去。</div>
+      </div>
+      <div class="example">
+        <div class="ex-head">
+          <button class="btn-mini" data-src="w02_e2.mp3" data-text="家族で家事を分担すれば、毎日がずっと楽になります。" title="播放例句"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+          <div class="ex-jp">家族で家事を分担すれば、毎日がずっと楽になります。</div>
+        </div>
+        <div class="ex-kana">かぞくで かじを ぶんたんすれば、まいにちが ずっと らくに なります。</div>
+        <div class="ex-cn">家里人分担家务的话，每天就会轻松得多。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 気付く -->
+  <section class="card" id="w03">
+    <div class="card-head">
+      <div class="num">03</div>
+      <div class="word-block">
+        <div class="word"><ruby>気付く<rt>きづく</rt></ruby></div>
+        <div class="meta"><span class="accent">音调 ②</span><span>动词・五段（自动）</span></div>
+      </div>
+      <button class="btn-play" data-src="w03.mp3" data-text="気付く"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4z"/></svg>朗读</button>
+    </div>
+    <div class="meaning">注意到；察觉；醒悟过来（意识到此前没留意的事）</div>
+    <div class="examples">
+      <div class="example">
+        <div class="ex-head">
+          <button class="btn-mini" data-src="w03_e1.mp3" data-text="家を出てから、財布を忘れたことに気付いた。" title="播放例句"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+          <div class="ex-jp">家を出てから、財布を忘れたことに気付いた。</div>
+        </div>
+        <div class="ex-kana">いえを でてから、さいふを わすれた ことに きづいた。</div>
+        <div class="ex-cn">出门以后才发现忘了带钱包。</div>
+      </div>
+      <div class="example">
+        <div class="ex-head">
+          <button class="btn-mini" data-src="w03_e2.mp3" data-text="彼女の小さな変化になかなか気付かなかった。" title="播放例句"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+          <div class="ex-jp">彼女の小さな変化になかなか気付かなかった。</div>
+        </div>
+        <div class="ex-kana">かのじょの ちいさな へんかに なかなか きづかなかった。</div>
+        <div class="ex-cn">一直没有察觉到她细微的变化。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 済ませる -->
+  <section class="card" id="w04">
+    <div class="card-head">
+      <div class="num">04</div>
+      <div class="word-block">
+        <div class="word"><ruby>済ませる<rt>すませる</rt></ruby></div>
+        <div class="meta"><span class="accent">音调 ③</span><span>动词・一段（他动）</span></div>
+      </div>
+      <button class="btn-play" data-src="w04.mp3" data-text="済ませる"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4z"/></svg>朗读</button>
+    </div>
+    <div class="meaning">办完；弄完；了结（把事情处理掉）；将就着解决</div>
+    <div class="examples">
+      <div class="example">
+        <div class="ex-head">
+          <button class="btn-mini" data-src="w04_e1.mp3" data-text="昼ご飯は簡単におにぎりで済ませた。" title="播放例句"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+          <div class="ex-jp">昼ご飯は簡単におにぎりで済ませた。</div>
+        </div>
+        <div class="ex-kana">ひるごはんは かんたんに おにぎりで すませた。</div>
+        <div class="ex-cn">午饭就简单用饭团对付了。</div>
+      </div>
+      <div class="example">
+        <div class="ex-head">
+          <button class="btn-mini" data-src="w04_e2.mp3" data-text="手続きは昨日のうちに済ませておきました。" title="播放例句"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+          <div class="ex-jp">手続きは昨日のうちに済ませておきました。</div>
+        </div>
+        <div class="ex-kana">てつづきは きのうの うちに すませて おきました。</div>
+        <div class="ex-cn">手续昨天就已经办好了。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 招く -->
+  <section class="card" id="w05">
+    <div class="card-head">
+      <div class="num">05</div>
+      <div class="word-block">
+        <div class="word"><ruby>招く<rt>まねく</rt></ruby></div>
+        <div class="meta"><span class="accent">音调 ②</span><span>动词・五段（他动）</span></div>
+      </div>
+      <button class="btn-play" data-src="w05.mp3" data-text="招く"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4z"/></svg>朗读</button>
+    </div>
+    <div class="meaning">邀请；招待；招致（引起不好的结果）</div>
+    <div class="examples">
+      <div class="example">
+        <div class="ex-head">
+          <button class="btn-mini" data-src="w05_e1.mp3" data-text="週末、友達を家に招いて食事をしました。" title="播放例句"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+          <div class="ex-jp">週末、友達を家に招いて食事をしました。</div>
+        </div>
+        <div class="ex-kana">しゅうまつ、ともだちを いえに まねいて しょくじを しました。</div>
+        <div class="ex-cn">周末邀请朋友来家里吃了饭。</div>
+      </div>
+      <div class="example">
+        <div class="ex-head">
+          <button class="btn-mini" data-src="w05_e2.mp3" data-text="ちょっとした油断が大きな事故を招くことがある。" title="播放例句"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+          <div class="ex-jp">ちょっとした油断が大きな事故を招くことがある。</div>
+        </div>
+        <div class="ex-kana">ちょっとした ゆだんが おおきな じこを まねく ことが ある。</div>
+        <div class="ex-cn">一点点的疏忽有时会招致重大事故。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 苦手 -->
+  <section class="card" id="w06">
+    <div class="card-head">
+      <div class="num">06</div>
+      <div class="word-block">
+        <div class="word"><ruby>苦手<rt>にがて</rt></ruby></div>
+        <div class="meta"><span class="accent">音调 ③</span><span>形容动词（な）・名词</span></div>
+      </div>
+      <button class="btn-play" data-src="w06.mp3" data-text="苦手"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4z"/></svg>朗读</button>
+    </div>
+    <div class="meaning">不擅长；怕；不好对付（人或事让自己感到棘手）</div>
+    <div class="examples">
+      <div class="example">
+        <div class="ex-head">
+          <button class="btn-mini" data-src="w06_e1.mp3" data-text="私は人前で話すのが苦手です。" title="播放例句"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+          <div class="ex-jp">私は人前で話すのが苦手です。</div>
+        </div>
+        <div class="ex-kana">わたしは ひとまえで はなすのが にがてです。</div>
+        <div class="ex-cn">我不擅长在人前讲话。</div>
+      </div>
+      <div class="example">
+        <div class="ex-head">
+          <button class="btn-mini" data-src="w06_e2.mp3" data-text="苦手な料理でも、週に一度は挑戦しています。" title="播放例句"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+          <div class="ex-jp">苦手な料理でも、週に一度は挑戦しています。</div>
+        </div>
+        <div class="ex-kana">にがてな りょうりでも、しゅうに いちどは ちょうせん しています。</div>
+        <div class="ex-cn">即使是自己不擅长的菜，每周也会挑战做一次。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 手軽 -->
+  <section class="card" id="w07">
+    <div class="card-head">
+      <div class="num">07</div>
+      <div class="word-block">
+        <div class="word"><ruby>手軽<rt>てがる</rt></ruby></div>
+        <div class="meta"><span class="accent">音调 ⓪</span><span>形容动词（な）</span></div>
+      </div>
+      <button class="btn-play" data-src="w07.mp3" data-text="手軽"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4z"/></svg>朗读</button>
+    </div>
+    <div class="meaning">简便；轻易；随手可做（花费小、门槛低）</div>
+    <div class="examples">
+      <div class="example">
+        <div class="ex-head">
+          <button class="btn-mini" data-src="w07_e1.mp3" data-text="この店は値段が手軽で、味もいい。" title="播放例句"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+          <div class="ex-jp">この店は値段が手軽で、味もいい。</div>
+        </div>
+        <div class="ex-kana">この みせは ねだんが てがるで、あじも いい。</div>
+        <div class="ex-cn">这家店价格实惠，味道也不错。</div>
+      </div>
+      <div class="example">
+        <div class="ex-head">
+          <button class="btn-mini" data-src="w07_e2.mp3" data-text="手軽に作れる朝ご飯を教えてください。" title="播放例句"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+          <div class="ex-jp">手軽に作れる朝ご飯を教えてください。</div>
+        </div>
+        <div class="ex-kana">てがるに つくれる あさごはんを おしえて ください。</div>
+        <div class="ex-cn">请告诉我做法简便的早餐。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 恥ずかしい -->
+  <section class="card" id="w08">
+    <div class="card-head">
+      <div class="num">08</div>
+      <div class="word-block">
+        <div class="word"><ruby>恥ずかしい<rt>はずかしい</rt></ruby></div>
+        <div class="meta"><span class="accent">音调 ④</span><span>形容词（い）</span></div>
+      </div>
+      <button class="btn-play" data-src="w08.mp3" data-text="恥ずかしい"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4z"/></svg>朗读</button>
+    </div>
+    <div class="meaning">害羞的；难为情的；丢人的</div>
+    <div class="examples">
+      <div class="example">
+        <div class="ex-head">
+          <button class="btn-mini" data-src="w08_e1.mp3" data-text="名前を呼ばれて、恥ずかしくて顔が赤くなった。" title="播放例句"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+          <div class="ex-jp">名前を呼ばれて、恥ずかしくて顔が赤くなった。</div>
+        </div>
+        <div class="ex-kana">なまえを よばれて、はずかしくて かおが あかく なった。</div>
+        <div class="ex-cn">被叫到名字，难为情得脸都红了。</div>
+      </div>
+      <div class="example">
+        <div class="ex-head">
+          <button class="btn-mini" data-src="w08_e2.mp3" data-text="わからないことは恥ずかしいことではない。" title="播放例句"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+          <div class="ex-jp">わからないことは恥ずかしいことではない。</div>
+        </div>
+        <div class="ex-kana">わからない ことは はずかしい ことでは ない。</div>
+        <div class="ex-cn">不懂并不是什么丢人的事。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 09 早速 -->
+  <section class="card" id="w09">
+    <div class="card-head">
+      <div class="num">09</div>
+      <div class="word-block">
+        <div class="word"><ruby>早速<rt>さっそく</rt></ruby></div>
+        <div class="meta"><span class="accent">音调 ①</span><span>副词</span></div>
+      </div>
+      <button class="btn-play" data-src="w09.mp3" data-text="早速"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4z"/></svg>朗读</button>
+    </div>
+    <div class="meaning">马上；立刻；赶紧（不留间隔地行动）</div>
+    <div class="examples">
+      <div class="example">
+        <div class="ex-head">
+          <button class="btn-mini" data-src="w09_e1.mp3" data-text="新しいカメラが届いたので、早速試してみた。" title="播放例句"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+          <div class="ex-jp">新しいカメラが届いたので、早速試してみた。</div>
+        </div>
+        <div class="ex-kana">あたらしい カメラが とどいたので、さっそく ためして みた。</div>
+        <div class="ex-cn">新相机送到了，于是马上试用了一下。</div>
+      </div>
+      <div class="example">
+        <div class="ex-head">
+          <button class="btn-mini" data-src="w09_e2.mp3" data-text="ご連絡ありがとうございます。早速ですが、ご相談があります。" title="播放例句"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+          <div class="ex-jp">ご連絡ありがとうございます。早速ですが、ご相談があります。</div>
+        </div>
+        <div class="ex-kana">ごれんらく ありがとうございます。さっそくですが、ごそうだんが あります。</div>
+        <div class="ex-cn">感谢您的联系。恕我开门见山，有件事想和您商量。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 たちまち -->
+  <section class="card" id="w10">
+    <div class="card-head">
+      <div class="num">10</div>
+      <div class="word-block">
+        <div class="word"><ruby>たちまち<rt>たちまち</rt></ruby></div>
+        <div class="meta"><span class="accent">音调 ⓪</span><span>副词</span></div>
+      </div>
+      <button class="btn-play" data-src="w10.mp3" data-text="たちまち"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4z"/></svg>朗读</button>
+    </div>
+    <div class="meaning">转眼间；一下子；即刻（变化非常快）</div>
+    <div class="examples">
+      <div class="example">
+        <div class="ex-head">
+          <button class="btn-mini" data-src="w10_e1.mp3" data-text="空が暗くなったと思ったら、たちまち大雨になった。" title="播放例句"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+          <div class="ex-jp">空が暗くなったと思ったら、たちまち大雨になった。</div>
+        </div>
+        <div class="ex-kana">そらが くらく なったと おもったら、たちまち おおあめに なった。</div>
+        <div class="ex-cn">天刚变暗，转眼间就下起了大雨。</div>
+      </div>
+      <div class="example">
+        <div class="ex-head">
+          <button class="btn-mini" data-src="w10_e2.mp3" data-text="新しいゲームは発売と同時に、たちまち人気になった。" title="播放例句"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+          <div class="ex-jp">新しいゲームは発売と同時に、たちまち人気になった。</div>
+        </div>
+        <div class="ex-kana">あたらしい ゲームは はつばいと どうじに、たちまち にんきに なった。</div>
+        <div class="ex-cn">新游戏一发售，一下子就火了。</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="tip">
+      学习小贴士：先点「朗读」听单词读音并跟读 2 遍，再听例句，最后遮住中文自测翻译。
+      「出張・家事」偏工作与生活安排，「気付く・済ませる・招く」偏日常动作，「苦手・手軽・恥ずかしい」偏评价与感受，「早速・たちまち」偏时间副词。
+      注意区分：「気付く」（自然察觉、意识到）与「気づく」写法通用，但名词形是「気づき／気付き」；「済ませる」是他动词（把事情办完），自动词是「済む」；「招く」既有“邀请”也有“招致（坏结果）”两种用法；「手軽」强调门槛低、花费少，与「手頃」（价格·大小·难度合适）语感相近但侧重不同。
+    </div>
+    <p style="margin-top:12px">每日日语 · 20261127 · 音频由 edge-tts（ja-JP-NanamiNeural）生成 · 若音频无法播放，将自动切换浏览器语音朗读</p>
+  </footer>
+
+</div>
+
+<script>
+  let currentAudio = null;
+  let currentBtn = null;
+
+  function resetBtn(btn) {
+    if (!btn) return;
+    btn.classList.remove('playing');
+  }
+
+  function speakFallback(text, btn) {
+    if (!window.speechSynthesis) return;
+    window.speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = 'ja-JP';
+    u.rate = 0.95;
+    if (btn) {
+      u.onend = function () { resetBtn(btn); };
+      u.onerror = function () { resetBtn(btn); };
+    }
+    window.speechSynthesis.speak(u);
+  }
+
+  function play(src, text, btn) {
+    if (currentBtn && currentBtn !== btn) resetBtn(currentBtn);
+    if (window.speechSynthesis) window.speechSynthesis.cancel();
+    if (currentAudio) { currentAudio.pause(); currentAudio = null; }
+
+    currentBtn = btn;
+    if (btn) btn.classList.add('playing');
+
+    const a = new Audio(src);
+    currentAudio = a;
+    a.onended = function () { resetBtn(btn); };
+    a.onerror = function () {
+      speakFallback(text, btn);
+    };
+    a.play().catch(function () { speakFallback(text, btn); });
+  }
+
+  document.addEventListener('click', function (e) {
+    const btn = e.target.closest('button[data-src]');
+    if (!btn) return;
+    play(btn.getAttribute('data-src'), btn.getAttribute('data-text'), btn);
+  });
+</script>
+
+</body>
+</html>
